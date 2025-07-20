@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="temp.css">
+  <link rel="shortcut icon" href="templogo.avif" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <h2>Temperature Converter</h2>
+
+    <input type="number" id="inputTemp" placeholder="Enter temperature">
+
+    <select id="fromUnit">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      <option value="K">Kelvin</option>
+    </select>
+
+    <button onclick="handleConversion()">Show Result</button>
+
+    <div id="output"></div>
+  </div>
+
+  <script>
+    function handleConversion() {
+      const value = parseFloat(document.getElementById("inputTemp").value);
+      const unit = document.getElementById("fromUnit").value;
+      const display = document.getElementById("output");
+
+      if (isNaN(value)) {
+        display.innerText = "Please enter a valid temperature.";
+        return;
+      }
+
+      let resultText = "";
+
+      switch(unit) {
+        case "C":
+          const toF = (value * 9/5) + 32;
+          const toK = value + 273.15;
+          resultText = `${value}°C = ${toF.toFixed(2)}°F = ${toK.toFixed(2)}K`;
+          break;
+
+        case "F":
+          const toC = (value - 32) * 5/9;
+          const kFromF = toC + 273.15;
+          resultText = `${value}°F = ${toC.toFixed(2)}°C = ${kFromF.toFixed(2)}K`;
+          break;
+
+        case "K":
+          const cFromK = value - 273.15;
+          const fFromK = (cFromK * 9/5) + 32;
+          resultText = `${value}K = ${cFromK.toFixed(2)}°C = ${fFromK.toFixed(2)}°F`;
+          break;
+      }
+
+      display.innerText = resultText;
+    }
+  </script>
+
+</body>
+</html>
