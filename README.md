@@ -7,6 +7,6 @@ A responsive and stylish temperature converter built with HTML, CSS, and JavaScr
 - Simple and lightweight
 
 # Technologies Used
-HTML– structure of the page
-CSS– styling and layout
-JavaScript– conversion logic and interaction
+- HTML– structure of the page
+- CSS– styling and layout
+- JavaScript– conversion logic and interaction
