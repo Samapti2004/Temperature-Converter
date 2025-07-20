@@ -2,7 +2,7 @@ body {
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-image: url('wheather.jpg');
+      background-image: url('weather.jpg');
       background-size: cover;
       background-position: center;
       height: 100vh;
